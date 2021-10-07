@@ -1,4 +1,6 @@
 package com.example.selectionactivity
 
-data class Item (val resourceId: Int, val description: String){
+import java.io.Serializable
+
+data class Dunk (val resourceId: Int, val description: String) : Serializable{
 }
