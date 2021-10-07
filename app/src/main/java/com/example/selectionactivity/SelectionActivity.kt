@@ -19,8 +19,8 @@ class SelectionActivity : AppCompatActivity() {
         val dunks = generateTestData()
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        val imageView = findViewById<ImageView>(R.id.imageView)
-        val textView = findViewById<TextView>(R.id.textView)
+        // val imageView = findViewById<ImageView>(R.id.imageView)
+        // val textView = findViewById<TextView>(R.id.textView)
 
         recyclerView.layoutManager = GridLayoutManager(this, 3)
 
@@ -30,8 +30,8 @@ class SelectionActivity : AppCompatActivity() {
         // to have access to the activity's members
         val onClickListener = View.OnClickListener {
             val itemPosition = recyclerView.getChildAdapterPosition(it)
-            imageView.setImageResource(dunks[itemPosition].resourceId)
-            textView.text = dunks[itemPosition].description
+            //imageView.setImageResource(dunks[itemPosition].resourceId)
+            //textView.text = dunks[itemPosition].description
 
             sendMessage(dunks[itemPosition])
 
@@ -57,8 +57,8 @@ class SelectionActivity : AppCompatActivity() {
     fun sendMessage(dunk: Dunk)
     {
 
-        val viewText = findViewById<TextView>(R.id.textView) // Find textView
-        val message = viewText.text.toString() // convert text to string
+        // val viewText = findViewById<TextView>(R.id.textView) // Find textView
+        // val message = viewText.text.toString() // convert text to string
         val intent = Intent(this, DisplayActivity::class.java)
         intent.putExtra("custom_image", dunk as Serializable)
         // intent.putExtra("descriptor", dunk.description)

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectionActivity">
-
+    <!--
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
-
+-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="366dp"
@@ -27,7 +27,7 @@
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+<!--
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="130dp"
@@ -40,5 +40,5 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@tools:sample/avatars" />
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>
