@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 /* THIS CODE IS FROM ASSIGNMENT THREE PROFESSOR REQUESTED. SINCE MY IMPLEMENTATION
 * WAS FAULTY I THOUGHT IT WOULD BE OK TO START FROM THE SOLUTION*/
 
-class ImageAdapter (_items : Array<Item>, _ocl : View.OnClickListener) : RecyclerView.Adapter<ImageAdapter.ViewHolder>()
+class ImageAdapter (_items : Array<Dunk>, _ocl : View.OnClickListener) : RecyclerView.Adapter<ImageAdapter.ViewHolder>()
 {
 
     private val items = _items

@@ -37,7 +37,7 @@ class SelectionActivity : AppCompatActivity() {
 
         }
 
-        recyclerView.adapter = ImageAdapter(items, onClickListener)
+        recyclerView.adapter = ImageAdapter(dunks, onClickListener)
     }
 
     // Test data
@@ -60,8 +60,8 @@ class SelectionActivity : AppCompatActivity() {
         val viewText = findViewById<TextView>(R.id.textView) // Find textView
         val message = viewText.text.toString() // convert text to string
         val intent = Intent(this, DisplayActivity::class.java)
-        intent.putExtra("custom_image", dunk.resourceID)
-        intent.putExtra("descriptor",
+        intent.putExtra("custom_image", dunk as Serializable)
+        // intent.putExtra("descriptor", dunk.description)
         startActivity(intent)
 
     }
