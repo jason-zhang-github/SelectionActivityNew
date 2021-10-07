@@ -59,8 +59,8 @@ class SelectionActivity : AppCompatActivity() {
 
         // val viewText = findViewById<TextView>(R.id.textView) // Find textView
         // val message = viewText.text.toString() // convert text to string
-        val intent = Intent(this, DisplayActivity::class.java)
-        intent.putExtra("custom_image", dunk as Serializable)
+        val intent = Intent(this, DisplayActivity::class.java) // Create intent
+        intent.putExtra("custom_image", dunk as Serializable) // Add Dunk to the intent
         // intent.putExtra("descriptor", dunk.description)
         startActivity(intent)
 
