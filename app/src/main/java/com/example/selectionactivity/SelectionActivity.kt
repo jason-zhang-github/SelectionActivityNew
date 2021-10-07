@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import org.w3c.dom.Text
 
 
 class SelectionActivity : AppCompatActivity() {
@@ -29,6 +30,8 @@ class SelectionActivity : AppCompatActivity() {
             val itemPosition = recyclerView.getChildAdapterPosition(it)
             imageView.setImageResource(items[itemPosition].resourceId)
             textView.text = items[itemPosition].description
+
+
         }
 
         recyclerView.adapter = ImageAdapter(items, onClickListener)
@@ -46,6 +49,14 @@ class SelectionActivity : AppCompatActivity() {
             , Item(R.drawable.dunk_supreme,"Supreme Dunk")
             , Item(R.drawable.dunk_heineken, "Heineken Dunk"))
     }
+
+
+    fun sendMessage(view: View)
+    {
+        val viewText = findViewById<TextView>(R.id.textView) // Find textView
+        val message = viewText.text.toString() // convert
+    }
+
 
 
 }
