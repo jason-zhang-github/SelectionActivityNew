@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">SelectionActivity</string>
+    <string name= "app_name">SelectionActivity</string>
+    <string name= "supreme_dunk">Supreme Dunk</string>
+    <string name= "mondrian_dunk">Piet Mondrian Dunk</string>
+    <string name = "lobster_dunk">Concepts X Nike Dunk "Purple Lobster"</string>
+    <string name = "pigeon_dunk">Pigeon Dunk</string>
+    <string name = "strangelove_dunk">Strangelove Dunk</string>
+    <string name = "stussy_dunk">Stussy X Nike Dunk "Cherry"</string>
+    <string name = "heineken_dunk">Heineken Dunk</string>
+    <string name = "viotech_dunk">Viotech Dunk</string>
+    <string name = "paris_dunk">Paris Dunk</string>
 </resources>
