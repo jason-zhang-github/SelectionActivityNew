@@ -40,15 +40,18 @@ class SelectionActivity : AppCompatActivity() {
         recyclerView.adapter = ImageAdapter(dunks, onClickListener)
     }
 
-    val pigeon : String = getString(R.string.pigeon)
+
+    /*val stussy : String = getString(R.string.stussy)
     val paris : String = getString(R.string.paris)
-    val stussy : String = getString(R.string.stussy)
-    val strangelove : String = getString(R.string.strangelove)
     val mondrian : String = getString(R.string.mondrian)
+    val pigeon : String = getString(R.string.pigeon)
+    val strangelove : String = getString(R.string.strangelove)
     val lobster : String = getString(R.string.lobster)
-    val supreme : String = getString(R.string.supreme)
-    val heineken : String = getString(R.string.heineken)
     val viotech : String = getString(R.string.viotech)
+    val supreme : String = getString(R.string.supreme)
+    val heineken : String = getString(R.string.heineken)*/
+
+    val myArray = resources.getStringArray(R.array.dunk_names)
 
     // Test data
     fun generateTestData(): Array<Dunk> {
