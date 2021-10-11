@@ -40,17 +40,27 @@ class SelectionActivity : AppCompatActivity() {
         recyclerView.adapter = ImageAdapter(dunks, onClickListener)
     }
 
+    val pigeon : String = getString(R.string.pigeon)
+    val paris : String = getString(R.string.paris)
+    val stussy : String = getString(R.string.stussy)
+    val strangelove : String = getString(R.string.strangelove)
+    val mondrian : String = getString(R.string.mondrian)
+    val lobster : String = getString(R.string.lobster)
+    val supreme : String = getString(R.string.supreme)
+    val heineken : String = getString(R.string.heineken)
+    val viotech : String = getString(R.string.viotech)
+
     // Test data
     fun generateTestData(): Array<Dunk> {
-        return arrayOf(Dunk(R.drawable.dunk_stussy, "Stussy Dunk")
-            , Dunk(R.drawable.dunk_paris,"Paris Dunk")
-            , Dunk(R.drawable.dunk_mondrian,"Piet Mondrian Dunk")
-            , Dunk(R.drawable.dunk_pigeon,"Pigeon Dunk")
-            , Dunk(R.drawable.dunk_strangelove,"Strangelove Dunk")
-            , Dunk(R.drawable.dunk_lobster,"Purple Lobster Dunk")
-            , Dunk(R.drawable.dunk_viotech,"Viotech Dunk")
-            , Dunk(R.drawable.dunk_supreme,"Supreme Dunk")
-            , Dunk(R.drawable.dunk_heineken, "Heineken Dunk"))
+        return arrayOf(Dunk(R.drawable.dunk_stussy, stussy)
+            , Dunk(R.drawable.dunk_paris,paris)
+            , Dunk(R.drawable.dunk_mondrian,mondrian)
+            , Dunk(R.drawable.dunk_pigeon,pigeon)
+            , Dunk(R.drawable.dunk_strangelove,strangelove)
+            , Dunk(R.drawable.dunk_lobster,lobster)
+            , Dunk(R.drawable.dunk_viotech,viotech)
+            , Dunk(R.drawable.dunk_supreme,supreme)
+            , Dunk(R.drawable.dunk_heineken, heineken))
     }
 
 
