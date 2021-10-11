@@ -39,18 +39,40 @@ class SelectionActivity : AppCompatActivity() {
 
         recyclerView.adapter = ImageAdapter(dunks, onClickListener)
     }
+    // Get all these strings
+    val stussy = getString(R.string.stussy_dunk)
+    val mondrian = getString(R.string.mondrian_dunk)
+    val pigeon = getString(R.string.pigeon_dunk)
+    val strangelove = getString(R.string.strangelove_dunk)
+    val lobster = getString(R.string.lobster_dunk)
+    val viotech = getString(R.string.viotech_dunk)
+    val supreme = getString(R.string.supreme_dunk)
+    val heineken = getString(R.string.heineken_dunk)
+    val paris = getString(R.string.paris_dunk)
 
     // Test data
+    /*fun generateTestData(): Array<Dunk> {
+        return arrayOf(Dunk(R.drawable.dunk_stussy, stussy)
+            , Dunk(R.drawable.dunk_paris, paris)
+            , Dunk(R.drawable.dunk_mondrian, mondrian)
+            , Dunk(R.drawable.dunk_pigeon, pigeon)
+            , Dunk(R.drawable.dunk_strangelove, strangelove)
+            , Dunk(R.drawable.dunk_lobster, lobster)
+            , Dunk(R.drawable.dunk_viotech, viotech)
+            , Dunk(R.drawable.dunk_supreme, supreme)
+            , Dunk(R.drawable.dunk_heineken, heineken))
+    }*/
+
     fun generateTestData(): Array<Dunk> {
-        return arrayOf(Dunk(R.drawable.dunk_stussy, "Stussy Dunk")
-            , Dunk(R.drawable.dunk_paris,"Paris Dunk")
-            , Dunk(R.drawable.dunk_mondrian,"Piet Mondrian Dunk")
-            , Dunk(R.drawable.dunk_pigeon,"Pigeon Dunk")
-            , Dunk(R.drawable.dunk_strangelove,"Strangelove Dunk")
-            , Dunk(R.drawable.dunk_lobster,"Purple Lobster Dunk")
-            , Dunk(R.drawable.dunk_viotech,"Viotech Dunk")
-            , Dunk(R.drawable.dunk_supreme,"Supreme Dunk")
-            , Dunk(R.drawable.dunk_heineken, "Heineken Dunk"))
+        return arrayOf(Dunk(R.drawable.dunk_stussy, "1")
+            , Dunk(R.drawable.dunk_paris, "2")
+            , Dunk(R.drawable.dunk_mondrian, "3")
+            , Dunk(R.drawable.dunk_pigeon, "4")
+            , Dunk(R.drawable.dunk_strangelove, "5")
+            , Dunk(R.drawable.dunk_lobster, "6")
+            , Dunk(R.drawable.dunk_viotech, "7")
+            , Dunk(R.drawable.dunk_supreme, "8")
+            , Dunk(R.drawable.dunk_heineken, "9"))
     }
 
 
