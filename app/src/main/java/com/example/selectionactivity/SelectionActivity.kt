@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.w3c.dom.Text
 import java.io.Serializable
+import android.content.Context
 
 
 class SelectionActivity : AppCompatActivity() {
@@ -51,19 +52,20 @@ class SelectionActivity : AppCompatActivity() {
     val supreme : String = getString(R.string.supreme)
     val heineken : String = getString(R.string.heineken)*/
 
-    val myArray = resources.getStringArray(R.array.dunk_names)
+    // Gets the description array from Array XML
+    val myArray : Array<String> = resources.getStringArray(R.array.dunk_names)
 
-    // Test data
+    // Assign each dunk with proper description
     fun generateTestData(): Array<Dunk> {
-        return arrayOf(Dunk(R.drawable.dunk_stussy, stussy)
-            , Dunk(R.drawable.dunk_paris,paris)
-            , Dunk(R.drawable.dunk_mondrian,mondrian)
-            , Dunk(R.drawable.dunk_pigeon,pigeon)
-            , Dunk(R.drawable.dunk_strangelove,strangelove)
-            , Dunk(R.drawable.dunk_lobster,lobster)
-            , Dunk(R.drawable.dunk_viotech,viotech)
-            , Dunk(R.drawable.dunk_supreme,supreme)
-            , Dunk(R.drawable.dunk_heineken, heineken))
+        return arrayOf(Dunk(R.drawable.dunk_stussy, myArray[0])
+            , Dunk(R.drawable.dunk_paris,myArray[1])
+            , Dunk(R.drawable.dunk_mondrian,myArray[2])
+            , Dunk(R.drawable.dunk_pigeon,myArray[3])
+            , Dunk(R.drawable.dunk_strangelove,myArray[4])
+            , Dunk(R.drawable.dunk_lobster,myArray[5])
+            , Dunk(R.drawable.dunk_viotech,myArray[6])
+            , Dunk(R.drawable.dunk_supreme,myArray[7])
+            , Dunk(R.drawable.dunk_heineken, myArray[8]))
     }
 
 

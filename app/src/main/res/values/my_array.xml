@@ -2,14 +2,14 @@
 <resources>
     <string-array name="dunk_names">
         <item>Stussy Cherry Dunk</item>
-        <item>Piet Mondrian Dunk</item>
-        <item>Supreme Dunk</item>
-        <item>Pigeon Dunk</item>
-        <item>Heineken Dunk</item>
-        <item>Purple Lobster Dunk</item>
-        <item>Strangelove Dunk</item>
-        <item>Viotech Dunk</item>
         <item>Paris Dunk</item>
+        <item>Piet Mondrian Dunk</item>
+        <item>Pigeon Dunk</item>
+        <item>Strangelove Dunk</item>
+        <item>Purple Lobster Dunk</item>
+        <item>Viotech Dunk</item>
+        <item>Supreme Dunk</item>
+        <item>Heineken Dunk</item>
     </string-array>
 
 </resources>
