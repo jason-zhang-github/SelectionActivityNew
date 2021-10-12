@@ -34,6 +34,7 @@
         android:layout_width="287dp"
         android:layout_height="84dp"
         android:layout_marginTop="96dp"
+        android:gravity="center"
         android:text="@string/instructions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

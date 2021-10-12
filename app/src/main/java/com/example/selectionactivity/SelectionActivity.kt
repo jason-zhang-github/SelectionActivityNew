@@ -17,7 +17,10 @@ class SelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val dunks = generateTestData()
+
+        // Gets the description array from Array XML
+        val myArray : Array<String> = resources.getStringArray(R.array.dunk_names)
+        val dunks = generateTestData(myArray)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         // val imageView = findViewById<ImageView>(R.id.imageView)
@@ -52,20 +55,17 @@ class SelectionActivity : AppCompatActivity() {
     val supreme : String = getString(R.string.supreme)
     val heineken : String = getString(R.string.heineken)*/
 
-    // Gets the description array from Array XML
-    val myArray : Array<String> = resources.getStringArray(R.array.dunk_names)
-
     // Assign each dunk with proper description
-    fun generateTestData(): Array<Dunk> {
-        return arrayOf(Dunk(R.drawable.dunk_stussy, myArray[0])
-            , Dunk(R.drawable.dunk_paris,myArray[1])
-            , Dunk(R.drawable.dunk_mondrian,myArray[2])
-            , Dunk(R.drawable.dunk_pigeon,myArray[3])
-            , Dunk(R.drawable.dunk_strangelove,myArray[4])
-            , Dunk(R.drawable.dunk_lobster,myArray[5])
-            , Dunk(R.drawable.dunk_viotech,myArray[6])
-            , Dunk(R.drawable.dunk_supreme,myArray[7])
-            , Dunk(R.drawable.dunk_heineken, myArray[8]))
+    fun generateTestData(dunkdesc : Array<String>): Array<Dunk> {
+        return arrayOf(Dunk(R.drawable.dunk_stussy, dunkdesc[0])
+            , Dunk(R.drawable.dunk_paris, dunkdesc[1])
+            , Dunk(R.drawable.dunk_mondrian, dunkdesc[2])
+            , Dunk(R.drawable.dunk_pigeon, dunkdesc[3])
+            , Dunk(R.drawable.dunk_strangelove,dunkdesc[4])
+            , Dunk(R.drawable.dunk_lobster, dunkdesc[5])
+            , Dunk(R.drawable.dunk_viotech, dunkdesc[6])
+            , Dunk(R.drawable.dunk_supreme, dunkdesc[7])
+            , Dunk(R.drawable.dunk_heineken, dunkdesc[8]))
     }
 
 

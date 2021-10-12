@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dunk_names">
+        <item>Stussy Cherry Dunk (no translation for a name)</item>
+        <item>Paris Dunk (no translation for a name)</item>
+        <item>Piet Mondrian Dunk (no translation for a name)</item>
+        <item>Pigeon Dunk (no translation for a name)</item>
+        <item>Strangelove Dunk (no translation for a name)</item>
+        <item>Purple Lobster Dunk (no translation for a name)</item>
+        <item>Viotech Dunk (no translation for a name)</item>
+        <item>Supreme Dunk (no translation for a name)</item>
+        <item>Heineken Dunk (no translation for a name)</item>
+    </string-array>
+</resources>
