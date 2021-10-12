@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name = "app_name">Activite de Selection</string>
+    <string name = "app_name">Activité de Sélection</string>
     <string name = "instructions">Cliquez sur une image ci-dessous pour voir</string>
 </resources>
