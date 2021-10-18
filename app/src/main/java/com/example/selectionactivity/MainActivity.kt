@@ -15,6 +15,11 @@ import androidx.fragment.app.FragmentContainerView
 
 
 class MainActivity : AppCompatActivity() {
+
+    // declare fragments
+    lateinit var displayfrag: DisplayFragment
+    lateinit var firstfrag: SelectionFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,6 +32,23 @@ class MainActivity : AppCompatActivity() {
         val listFragment = findViewById<FragmentContainerView>(R.id.fragmentContainerView)
         val detailFragment = findViewById<FragmentContainerView>(R.id.fragmentContainerView2)
 
+        // initialize fragments
+        firstfrag = SelectionFragment.newInstance()
+        displayfrag = DisplayFragment()
+
+        supportFragmentManager.beginTransaction()
+            .add()
+
+
+        // val fragmentManager = getFragmentManager()
+        // Transaction Code
+        /* if (savedInstanceState == null)
+        {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<SelectionFragment>(R.id.fragmentContainerView)
+            }
+        } */
 
 
         // View.OnClickListener is created in the activity
