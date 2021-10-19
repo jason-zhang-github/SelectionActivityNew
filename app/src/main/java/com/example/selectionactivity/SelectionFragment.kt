@@ -39,9 +39,13 @@ class SelectionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        inflater.inflate(R.layout.fragment_selection, container, false)
+        layout = inflater.inflate(R.layout.fragment_selection, container, false)
 
-        val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+        // Get the recyclerview from xml to the fragment
+        //val recyclerview = requireView().findViewById<RecyclerView>(R.id.recyclerview)
+        recycler = layout.findViewById<RecyclerView>(R.id.recyclerview)
+
+        return layout
     }
 
     companion object {

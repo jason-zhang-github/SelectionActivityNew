@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         firstfrag = SelectionFragment.newInstance()
         displayfrag = DisplayFragment()
 
+        val bundle = Bundle()
+        bundle.putParcelableArray("dunks", list as Array<Dunk>)
+        firstfrag.arguments
+
         supportFragmentManager.beginTransaction()
             .add()
 
