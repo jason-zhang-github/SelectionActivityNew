@@ -6,6 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -15,6 +21,7 @@ private const val ARG_PARAM2 = "param2"
 
 lateinit var recycler : RecyclerView
 lateinit var layout : View
+lateinit var viewModelProvider : ViewModelProvider
 
 /**
  * A simple [Fragment] subclass.

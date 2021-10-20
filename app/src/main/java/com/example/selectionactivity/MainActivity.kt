@@ -12,6 +12,9 @@ import org.w3c.dom.Text
 import java.io.Serializable
 import android.content.Context
 import androidx.fragment.app.FragmentContainerView
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         val detailFragment = findViewById<FragmentContainerView>(R.id.fragmentContainerView2)
 
         // initialize fragments
-        firstfrag = SelectionFragment.newInstance()
+        firstfrag = SelectionFragment.getInstance(1)
         displayfrag = DisplayFragment()
 
         //val bundle = Bundle()
@@ -41,7 +44,9 @@ class MainActivity : AppCompatActivity() {
         //firstfrag.arguments
 
         supportFragmentManager.beginTransaction()
-            .add()
+            .add(R.id.fragmentContainerView, firstfrag)
+            .add(R.id.fragmentContainerView2, displayfrag)
+            .commit()
 
 
         // val fragmentManager = getFragmentManager()
