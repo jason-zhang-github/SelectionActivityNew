@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.lifecycle.ViewModelProvider
+import androidx.appcompat.app.AppCompatActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +24,9 @@ class DisplayFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var layout : View
+    lateinit var imageView : ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,7 +40,19 @@ class DisplayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display, container, false)
+        layout = inflater.inflate(R.layout.fragment_display, container, false)
+
+        // find imageview
+        imageView = layout.findViewById<ImageView>(R.id.imageView)
+
+        // Use DunkModel to update content of imageview
+        ViewModelProvider(requireActivity())
+            .get(DunkModel::class.java)
+            .getDunk().observe(requireActivity(), {
+                imageView.setImageResource(it.resourceId)
+            })
+
+        return layout
     }
 
     companion object {

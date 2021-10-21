@@ -12,16 +12,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-
-lateinit var recycler : RecyclerView
-lateinit var layout : View
-lateinit var viewModelProvider : ViewModelProvider
 
 /**
  * A simple [Fragment] subclass.
@@ -29,15 +21,16 @@ lateinit var viewModelProvider : ViewModelProvider
  * create an instance of this fragment.
  */
 class SelectionFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    lateinit var recycler : RecyclerView
+    lateinit var layout : View
+
+    lateinit var importdunks : Array<Dunk>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            importdunks = it.getSerializable("dunkarray") as Array<Dunk>
         }
     }
 
@@ -49,11 +42,18 @@ class SelectionFragment : Fragment() {
         layout = inflater.inflate(R.layout.fragment_selection, container, false)
 
         // Get the recyclerview from xml to the fragment
-        //val recyclerview = requireView().findViewById<RecyclerView>(R.id.recyclerview)
         recycler = layout.findViewById<RecyclerView>(R.id.recyclerview)
 
-        // recycler.adapter = ArrayAdapter(requireContext(), android.R.layout.frag)
-        recycler.adapter = ImageAdapter
+        recycler.layoutManager = GridLayoutManager(getActivity(), 3)
+
+        // set onclicklistener
+        val ocl = View.OnClickListener {
+            val item_position = recycler.getChildAdapterPosition(it)
+
+            ViewModelProvider(requireActivity()).get(DunkModel::class.java).setDunk(importdunks[item_position])
+        }
+        // set recycleview.adapter to an ImageAdapter
+        recycler.adapter = ImageAdapter(importdunks, ocl)
         return layout
     }
 
@@ -68,13 +68,19 @@ class SelectionFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(dunkarray : Array<Dunk>) : SelectionFragment
-        {
-            val fragment = SelectionFragment()
+        fun newInstance(dunkarray : Array<Dunk>) =
+            SelectionFragment().apply {
+                arguments = Bundle().apply {
+
+                    putSerializable("dunkarray", dunkarray)
+                }
+
+            /* val fragment = SelectionFragment()
             val bundle: Bundle = Bundle()
             bundle.putSerializable("dunkarray", dunkarray)
             fragment.arguments = bundle
             return fragment
+            */
         }
     }
 }

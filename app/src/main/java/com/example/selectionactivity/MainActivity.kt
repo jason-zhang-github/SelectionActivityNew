@@ -39,16 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         // initialize ViewModel and pass dunk array
         val viewModel : DunkModel by viewModels()
-        viewModel.setDunk(dunks)
 
         // initialize fragments
-        firstfrag = SelectionFragment.getInstance(1)
+        firstfrag = SelectionFragment.newInstance(dunks)
         displayfrag = DisplayFragment()
 
-
-        //val bundle = Bundle()
-        //bundle.putParcelableArray("dunks", list as Array<Dunk>)
-        //firstfrag.arguments
 
         supportFragmentManager.beginTransaction()
             .add(R.id.fragmentContainerView, firstfrag)
