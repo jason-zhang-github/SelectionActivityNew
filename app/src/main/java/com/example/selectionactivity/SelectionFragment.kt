@@ -30,7 +30,7 @@ class SelectionFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            importdunks = it.getSerializable("dunkarray") as Array<Dunk>
+            importdunks = it.getParcelableArray("dunkarray") as Array<Dunk>
         }
     }
 
@@ -72,7 +72,7 @@ class SelectionFragment : Fragment() {
             SelectionFragment().apply {
                 arguments = Bundle().apply {
 
-                    putSerializable("dunkarray", dunkarray)
+                    putParcelableArray("dunkarray", dunkarray)
                 }
 
             /* val fragment = SelectionFragment()
