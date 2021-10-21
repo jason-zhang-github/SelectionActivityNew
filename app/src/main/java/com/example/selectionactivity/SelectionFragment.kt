@@ -52,6 +52,8 @@ class SelectionFragment : Fragment() {
         //val recyclerview = requireView().findViewById<RecyclerView>(R.id.recyclerview)
         recycler = layout.findViewById<RecyclerView>(R.id.recyclerview)
 
+        // recycler.adapter = ArrayAdapter(requireContext(), android.R.layout.frag)
+        recycler.adapter = ImageAdapter
         return layout
     }
 
@@ -66,12 +68,13 @@ class SelectionFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SelectionFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance(dunkarray : Array<Dunk>) : SelectionFragment
+        {
+            val fragment = SelectionFragment()
+            val bundle: Bundle = Bundle()
+            bundle.putSerializable("dunkarray", dunkarray)
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 }

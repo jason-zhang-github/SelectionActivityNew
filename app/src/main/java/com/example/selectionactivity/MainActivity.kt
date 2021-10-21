@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import org.w3c.dom.Text
 import java.io.Serializable
 import android.content.Context
+import androidx.activity.viewModels
 import androidx.fragment.app.FragmentContainerView
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.fragment.app.activityViewModels
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,9 +37,14 @@ class MainActivity : AppCompatActivity() {
         val listFragment = findViewById<FragmentContainerView>(R.id.fragmentContainerView)
         val detailFragment = findViewById<FragmentContainerView>(R.id.fragmentContainerView2)
 
+        // initialize ViewModel and pass dunk array
+        val viewModel : DunkModel by viewModels()
+        viewModel.setDunk(dunks)
+
         // initialize fragments
         firstfrag = SelectionFragment.getInstance(1)
         displayfrag = DisplayFragment()
+
 
         //val bundle = Bundle()
         //bundle.putParcelableArray("dunks", list as Array<Dunk>)
